@@ -1,0 +1,208 @@
+:root{
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --primary-color:#188818;
+    --border-color:#dbdbdb;
+    --background-color: #f5ecec;
+    --box-shadow: 0 1px 5px rgb(209, 214, 219);
+    --star-gold-color: #ffce3e;
+    --color-origin: rgb(107, 106, 106);
+
+
+
+    --header-height:120px;
+    --navbar-height:34px;
+    --navbar-with-search-height: calc(var(--header-height) - var(--navbar-heigh));
+}
+
+*{
+    box-sizing: inherit;
+}
+html{
+    /* là 16px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    /* font chu */
+    font-family: 'Roboto', sans-serif; 
+     box-sizing: border-box;
+    
+}
+
+/* Reposive */
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width{
+    width: 100%;
+}
+
+.grid__row{
+    display:flex;
+    flex-wrap:wrap ;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+/*  danh mục sp */
+/* Test */
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+/* danh saasch sản phẩm */
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+/* 2.4 là 5 sản phẩm trên cùng 1 hàng 
+là chiếm hết 10 cột sản phẩm*/
+.grid__comlumn-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+/* Animation  */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+/* chuyển động từ nhỏ đến lớn */
+@keyframes growth{
+    from{
+        transform:scale(var(--growth-form));
+    }
+    to{
+        transform:scale(var(--growth-to));
+
+    }
+}
+
+/* Modal */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    animation: fadeIn ease-in 0.2s;
+
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+/* khung đăng kí     */
+.modal__body{
+    --growth-form:0.7;
+    --growth-to:1;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    animation: growth linear 0.1s;
+    
+   
+}
+/* nút  */
+.btn {
+    min-width: 120px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding: 0 8px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--text-color);
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4rem;
+
+   
+  
+   
+}
+.btn:hover{
+    background-color: rgba(0, 0, 0, 0.25);
+}
+.btn.btn--primary{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    
+    
+}
+/* ví dụ cho nút k bám dc hoặc aarrn đi */
+.btn.btn--disable{
+    cursor: default;
+    background-color: var(--text-color);
+}
+/* nút fb vs gg */
+.btn.btn--size-s{
+    height: 32px;
+    font-size: 12px;
+}
+/* selection  ô giá*/
+.select-input{
+    min-width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 3px;
+    background-color:var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.select-input__label{
+    font-size: 1.4rem;
+}
+.select-input__icon{
+    font-size: 1.4rem;
+    color: rgb(201, 194, 194);
+    position: relative;
+    top: 1px;
+}
+/* hover dô giá thì sổ ra */
+.select-input:hover .select-input__list{
+    display: block;
+}
+/* sổ xuống của gía */
+.select-input__list{
+    position: absolute;
+    list-style: none;
+    left: 0;
+    right: 0;
+    top:25px;
+    padding: 8px 16px;
+    border-radius: 3px;
+    color: var(--text-color);
+    background-color: var(--white-color);
+    display: none;
+    z-index: 1;   
+}
+.select-input__item{
+
+}
+.select-input__link{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    display: block;
+    padding: 8px 0;  
+}
+.select-input__link:hover{
+    color: var(--primary-color);
+}
